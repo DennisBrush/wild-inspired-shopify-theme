@@ -1,55 +1,69 @@
 <section id="products">
   <div class="container">
-    <div class="product-grid">
-      <!-- Roll On Antiperspirant -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="{{ section.settings.product1_image | img_url: '400x' }}" alt="Roll On Antiperspirant">
+    <div class="product-carousel-wrapper">
+      <button class="carousel-nav carousel-prev" aria-label="Previous products">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      
+      <div class="product-carousel">
+        <!-- Roll On Antiperspirant -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="{{ section.settings.product1_image | img_url: '400x' }}" alt="Roll On Antiperspirant">
+          </div>
+          <h3>Roll On Antiperspirant</h3>
+          <p class="price">From £13.19</p>
+          <a href="/products/roll-on-antiperspirant" class="product-link">SHOP NOW →</a>
         </div>
-        <h3>Roll On Antiperspirant</h3>
-        <p class="price">From £13.19</p>
-        <a href="/products/roll-on-antiperspirant" class="product-link">Shop Now →</a>
+        
+        <!-- Roll On Deodorant -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="{{ section.settings.product2_image | img_url: '400x' }}" alt="Roll On Deodorant">
+          </div>
+          <h3>Roll On Deodorant</h3>
+          <p class="price">From £13.19</p>
+          <a href="/products/roll-on-deodorant" class="product-link">SHOP NOW →</a>
+        </div>
+        
+        <!-- Stick Deodorant -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="{{ section.settings.product3_image | img_url: '400x' }}" alt="Stick Deodorant">
+          </div>
+          <h3>Stick Deodorant</h3>
+          <p class="price">From £13.19</p>
+          <a href="/products/deodorant" class="product-link">SHOP NOW →</a>
+        </div>
+        
+        <!-- Body Wash -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="{{ section.settings.product4_image | img_url: '400x' }}" alt="Body Wash">
+          </div>
+          <h3>Body Wash</h3>
+          <p class="price">From £15.99</p>
+          <a href="/products/body-wash" class="product-link">SHOP NOW →</a>
+        </div>
+        
+        <!-- Lip Balm -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="{{ section.settings.product5_image | img_url: '400x' }}" alt="Lip Balm">
+          </div>
+          <h3>Lip Balm</h3>
+          <p class="price">From £7.20</p>
+          <a href="/products/lip-balm" class="product-link">SHOP NOW →</a>
+        </div>
       </div>
       
-      <!-- Roll On Deodorant -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="{{ section.settings.product2_image | img_url: '400x' }}" alt="Roll On Deodorant">
-        </div>
-        <h3>Roll On Deodorant</h3>
-        <p class="price">From £13.19</p>
-        <a href="/products/roll-on-deodorant" class="product-link">Shop Now →</a>
-      </div>
-      
-      <!-- Stick Deodorant -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="{{ section.settings.product3_image | img_url: '400x' }}" alt="Stick Deodorant">
-        </div>
-        <h3>Stick Deodorant</h3>
-        <p class="price">From £13.19</p>
-        <a href="/products/deodorant" class="product-link">Shop Now →</a>
-      </div>
-      
-      <!-- Body Wash -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="{{ section.settings.product4_image | img_url: '400x' }}" alt="Body Wash">
-        </div>
-        <h3>Body Wash</h3>
-        <p class="price">From £15.99</p>
-        <a href="/products/body-wash" class="product-link">Shop Now →</a>
-      </div>
-      
-      <!-- Lip Balm -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="{{ section.settings.product5_image | img_url: '400x' }}" alt="Lip Balm">
-        </div>
-        <h3>Lip Balm</h3>
-        <p class="price">From £7.20</p>
-        <a href="/products/lip-balm" class="product-link">Shop Now →</a>
-      </div>
+      <button class="carousel-nav carousel-next" aria-label="Next products">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
@@ -60,13 +74,25 @@
     background-color: var(--color-cream);
   }
   
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+  .product-carousel-wrapper {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 60px;
+  }
+  
+  .product-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 20px 0;
+  }
+  
+  .product-carousel::-webkit-scrollbar {
+    display: none;
   }
   
   .product-card {
@@ -75,6 +101,8 @@
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 280px;
+    min-width: 280px;
   }
   
   .product-card:hover {
@@ -114,28 +142,109 @@
     color: var(--color-deep-teal);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9rem;
     transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   
   .product-link:hover {
     color: var(--color-soft-pink);
   }
   
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .carousel-nav:hover {
+    background: var(--color-deep-teal);
+    color: white;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+  
+  .carousel-prev {
+    left: 0;
+  }
+  
+  .carousel-next {
+    right: 0;
+  }
+  
   @media (max-width: 768px) {
-    .product-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+    .product-carousel-wrapper {
+      padding: 0 50px;
+    }
+    
+    .product-card {
+      flex: 0 0 220px;
+      min-width: 220px;
     }
     
     .product-image {
       height: 180px;
     }
+    
+    .carousel-nav {
+      width: 38px;
+      height: 38px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-carousel-wrapper {
+      padding: 0 40px;
+    }
+    
+    .product-card {
+      flex: 0 0 200px;
+      min-width: 200px;
+    }
   }
 </style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.product-carousel');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    if (carousel && prevBtn && nextBtn) {
+      const scrollAmount = 320;
+      
+      prevBtn.addEventListener('click', function() {
+        carousel.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth'
+        });
+      });
+      
+      nextBtn.addEventListener('click', function() {
+        carousel.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
+
 {% schema %}
 {
-  "name": "Product Grid",
+  "name": "Product Carousel",
   "settings": [
     {
       "type": "image_picker",
@@ -165,7 +274,7 @@
   ],
   "presets": [
     {
-      "name": "Product Grid"
+      "name": "Product Carousel"
     }
   ]
 }
