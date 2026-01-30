@@ -12,8 +12,8 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_color": "#e9ff07",
-        "heading": "Welcome to Wild Inspired",
+        "bg_color": "#ffffff",
+        "heading": "De laatste tandenborstel die je ooit hoeft te kopen",
         "subheading": "Sustainable, effective products for your daily routine",
         "primary_button_text": "Shop Deodorant",
         "primary_button_link": "",
