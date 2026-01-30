@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Refillable body care that works",
+        "heading": "Welcome to Wild Inspired",
+        "subheading": "Sustainable, effective products for your daily routine"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Shop favourites"
+      }
+    },
+    "benefits": {
+      "type": "benefits-icon-row",
+      "settings": {
+        "heading": "The last deodorant you'll ever need to buy."
+      }
+    },
+    "how_it_works": {
+      "type": "how-it-works",
+      "settings": {
+        "heading": "How it works..."
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Stay in the loop"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_products",
+    "benefits",
+    "how_it_works",
+    "newsletter"
+  ]
+}
