@@ -15,8 +15,7 @@
       }
     },
     "benefits": {
-      "type": "benefits-icon-row",
-      "settings": {
+      "type": "benefits",      "settings": {
         "heading": "The last deodorant you'll ever need to buy."
       }
     },
