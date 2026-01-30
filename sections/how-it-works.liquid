@@ -1,159 +1,160 @@
-<div class="how-it-works">
+<section class="how-it-works">
   <div class="container">
-    <h2>{{ section.settings.heading }}</h2>
-    <p class="subtitle">{{ section.settings.subtitle }}</p>
+    <h2 class="section-heading">How it works...</h2>
+    <p class="section-subtitle">Simple steps to get started</p>
+    
     <div class="steps-grid">
-      {% for block in section.blocks %}
-        <div class="step-item" {{ block.shopify_attributes }}>
-          <div class="step-number">{{ forloop.index }}</div>
-          {% if block.settings.image != blank %}
-            <div class="step-image">
-              <img src="{{ block.settings.image | img_url: '300x' }}" alt="{{ block.settings.title }}">
-            </div>
-          {% endif %}
-          <h3>{{ block.settings.title }}</h3>
-          <p>{{ block.settings.description }}</p>
-        </div>
-      {% endfor %}
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-icon">🎨</div>
+        <h3>Choose your case</h3>
+        <p>Our reusable Wild case is a stylish and timeless design - all you have to do is pick your colour.</p>
+      </div>
+      
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-icon">🍭</div>
+        <h3>Pick scents</h3>
+        <p>Choose your favourite Wild fragrance and we'll take care of the rest.</p>
+      </div>
+      
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-icon">📦</div>
+        <h3>Subscribe & save or buy once</h3>
+        <p>We will ship your refills out to you exactly as and when you want.</p>
+      </div>
+    </div>
+    
+    <div class="cta-button-wrapper">
+      <a href="/products/deodorant" class="btn btn-primary-large">GET STARTED</a>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-.how-it-works {
-  padding: 80px 20px;
-  background-color: #f9f9f9;
-}
-
-.how-it-works .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.how-it-works h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #2D5F3F;
-}
-
-.how-it-works .subtitle {
-  text-align: center;
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 50px;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
-.step-item {
-  text-align: center;
-  position: relative;
-}
-
-.step-number {
-  width: 50px;
-  height: 50px;
-  background-color: #2D5F3F;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 auto 20px;
-}
-
-.step-image {
-  margin-bottom: 20px;
-}
-
-.step-image img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 8px;
-}
-
-.step-item h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #2D5F3F;
-}
-
-.step-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .steps-grid {
-    grid-template-columns: 1fr;
+  .how-it-works {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--color-cream) 0%, #e8f4f8 100%);
+    position: relative;
   }
-}
+  
+  .section-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: var(--color-charcoal);
+  }
+  
+  .section-subtitle {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 0 0 60px 0;
+    color: var(--color-text);
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+  
+  .step-item {
+    text-align: center;
+    position: relative;
+  }
+  
+  .step-number {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--color-neon-lime);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-charcoal);
+  }
+  
+  .step-icon {
+    font-size: 4rem;
+    margin: 40px 0 20px 0;
+  }
+  
+  .step-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: var(--color-charcoal);
+  }
+  
+  .step-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  .cta-button-wrapper {
+    text-align: center;
+  }
+  
+  .btn-primary-large {
+    display: inline-block;
+    padding: 18px 40px;
+    background-color: var(--color-deep-teal);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary-large:hover {
+    background-color: #145040;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  
+  @media (max-width: 768px) {
+    .how-it-works {
+      padding: 60px 0;
+    }
+    
+    .section-heading {
+      font-size: 2rem;
+    }
+    
+    .steps-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    
+    .step-icon {
+      font-size: 3rem;
+    }
+  }
 </style>
 
 {% schema %}
 {
   "name": "How It Works",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "How It Works"
-    },
-    {
-      "type": "textarea",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Simple steps to get started"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "step",
-      "name": "Step",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Step Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Step Title",
-          "default": "Step Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Step Description",
-          "default": "Step description goes here"
-        }
-      ]
-    }
-  ],
+  "settings": [],
   "presets": [
     {
-      "name": "How It Works",
-      "blocks": [
-        {
-          "type": "step"
-        },
-        {
-          "type": "step"
-        },
-        {
-          "type": "step"
-        }
-      ]
+      "name": "How It Works"
     }
   ]
 }
