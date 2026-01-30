@@ -1,101 +1,41 @@
-<div class="featured-products">
+<section id="collection">
   <div class="container">
-    <h2>{{ section.settings.heading }}</h2>
-    <div class="products-grid">
-      {% for block in section.blocks %}
-        <div class="product-card" {{ block.shopify_attributes }}>
-          {% if block.settings.image != blank %}
-            <div class="product-image">
-              <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.title }}">
-            </div>
-          {% endif %}
-          <h3>{{ block.settings.title }}</h3>
-          <p>{{ block.settings.description }}</p>
-          {% if block.settings.price != blank %}
-            <p class="price">{{ block.settings.price }}</p>
-          {% endif %}
-          {% if block.settings.button_link != blank %}
-            <a href="{{ block.settings.button_link }}" class="btn btn-secondary">{{ block.settings.button_text | default: 'View Product' }}</a>
-          {% endif %}
+    <p class="section-label">THE COLLECTION</p>
+    <h2 class="section-title">Each flavour<br>is a feeling.</h2>
+    
+    <div class="product-grid">
+      <!-- Fresh Card -->
+      <div class="product-card fresh">
+        <div>
+          <p class="product-label">MORNING ENERGY</p>
+          <h3>Fresh</h3>
+          <p class="product-tagline">Wake up. Show up.</p>
         </div>
-      {% endfor %}
+        <a href="/products/fresh" class="product-link">DISCOVER →</a>
+      </div>
+      
+      <!-- Calm Card -->
+      <div class="product-card calm">
+        <div>
+          <p class="product-label">EVENING WIND-DOWN</p>
+          <h3>Calm</h3>
+          <p class="product-tagline">Breathe. Rest.</p>
+        </div>
+        <a href="/products/calm" class="product-link">DISCOVER →</a>
+      </div>
+      
+      <!-- Deep Card -->
+      <div class="product-card deep">
+        <div>
+          <p class="product-label">ALL-DAY CONFIDENCE</p>
+          <h3>Deep</h3>
+          <p class="product-tagline">Strong. Grounded.</p>
+        </div>
+        <a href="/products/deep" class="product-link">DISCOVER →</a>
+      </div>
     </div>
   </div>
-</div>
-
-<style>
-.featured-products {
-  padding: 80px 20px;
-  background-color: #f9f9f9;
-}
-
-.featured-products .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.featured-products h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #165B36;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.product-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.product-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.product-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.product-card p {
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.product-card .price {
-  font-size: 24px;
-  font-weight: bold;
-  color: #165B36;
-  margin-bottom: 20px;
-}
-
-.btn-secondary {
-  background-color: transparent;
-  border: 2px solid #165B36;
-  color: #165B36;
-}
-
-.btn-secondary:hover {
-  background-color: #165B36;
-  color: white;
-}
-</style>
+</section>
 
 {% schema %}
 {
@@ -104,65 +44,14 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading",
-      "default": "Featured Products"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Product Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Product Title",
-          "default": "Product Name"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Product Description"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "Price",
-          "default": "$29.99"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "View Product"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button Link"
-        }
-      ]
+      "label": "Section Heading",
+      "default": "Each flavour is a feeling."
     }
   ],
   "presets": [
     {
       "name": "Featured Products",
-      "blocks": [
-        {
-          "type": "product"
-        },
-        {
-          "type": "product"
-        },
-        {
-          "type": "product"
-        }
-      ]
+      "category": "Custom"
     }
   ]
 }
