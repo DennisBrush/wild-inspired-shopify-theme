@@ -1,11 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "Refillable body care that works",
+        "bg_color": "#e9ff07",
         "heading": "Welcome to Wild Inspired",
-        "subheading": "Sustainable, effective products for your daily routine"
+        "subheading": "Sustainable, effective products for your daily routine",
+        "primary_button_text": "Shop Deodorant",
+        "primary_button_link": "",
+        "secondary_button_text": "Shop Lichaamszeep",
+        "secondary_button_link": ""
       }
     },
     "featured_products": {
@@ -15,20 +28,25 @@
       }
     },
     "benefits": {
-      "type": "benefits",      "settings": {
+      "type": "benefits",
+      "settings": {
         "heading": "The last deodorant you'll ever need to buy."
       }
     },
     "how_it_works": {
       "type": "how-it-works",
       "settings": {
-        "heading": "How it works..."
+        "heading": "How it works...",
+        "subtitle": "Simple steps to get started"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Stay in the loop"
+        "heading": "Stay in the loop",
+        "subtitle": "Subscribe to our newsletter for exclusive offers and updates",
+        "placeholder": "Enter your email",
+        "button_text": "Subscribe"
       }
     }
   },
