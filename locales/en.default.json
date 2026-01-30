@@ -1,0 +1,27 @@
+{
+  "general": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you requested does not exist."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My Account"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Cart",
+      "continue_shopping": "Continue Shopping",
+      "empty": "Your cart is empty"
+    }
+  }
+}
