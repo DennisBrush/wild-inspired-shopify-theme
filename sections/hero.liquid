@@ -1,82 +1,167 @@
-<div class="hero-section">
-  <div class="hero-content">
-    <h1>{{ section.settings.heading }}</h1>
-    <p>{{ section.settings.subheading }}</p>
-    {% if section.settings.button_text != blank %}
-      <a href="{{ section.settings.button_link }}" class="btn btn-primary">{{ section.settings.button_text }}</a>
+<div class="hero-section" style="background: {{ section.settings.bg_color }};">
+  <div class="hero__container">
+    <div class="hero__content">
+      <h1 class="hero__heading">{{ section.settings.heading }}</h1>
+      <p class="hero__subheading">{{ section.settings.subheading }}</p>
+      
+      <div class="hero__buttons">
+        {% if section.settings.primary_button_text != blank %}
+          <a href="{{ section.settings.primary_button_link }}" class="btn btn--primary">
+            {{ section.settings.primary_button_text }}
+          </a>
+        {% endif %}
+        
+        {% if section.settings.secondary_button_text != blank %}
+          <a href="{{ section.settings.secondary_button_link }}" class="btn btn--secondary">
+            {{ section.settings.secondary_button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.image != blank %}
+      <div class="hero__image">
+        <img 
+          src="{{ section.settings.image | img_url: '800x' }}" 
+          alt="{{ section.settings.heading }}"
+          loading="lazy"
+        >
+      </div>
     {% endif %}
   </div>
-  {% if section.settings.image != blank %}
-    <div class="hero-image">
-      <img src="{{ section.settings.image | img_url: '1200x' }}" alt="{{ section.settings.heading }}">
-    </div>
-  {% endif %}
 </div>
 
 <style>
-.hero-section {
-  display: flex;
-  align-items: center;
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-.hero-content {
-  flex: 1;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #2D5F3F;
-}
-
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.hero-image {
-  flex: 1;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 15px 40px;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: all 0.3s;
-}
-
-.btn-primary {
-  background-color: #2D5F3F;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #1e4129;
-}
-
-@media (max-width: 768px) {
   .hero-section {
-    flex-direction: column;
+    padding: 80px 24px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
   }
-  
-  .hero-content h1 {
-    font-size: 32px;
+
+  .hero__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
   }
-}
+
+  @media (max-width: 968px) {
+    .hero__container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+    
+    .hero-section {
+      padding: 60px 20px;
+      min-height: auto;
+    }
+  }
+
+  .hero__content {
+    max-width: 600px;
+  }
+
+  .hero__heading {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    margin: 0 0 20px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  @media (max-width: 768px) {
+    .hero__heading {
+      font-size: 48px;
+    }
+  }
+
+  .hero__subheading {
+    font-size: 20px;
+    color: #fff;
+    margin: 0 0 32px 0;
+    line-height: 1.5;
+    opacity: 0.95;
+  }
+
+  @media (max-width: 768px) {
+    .hero__subheading {
+      font-size: 18px;
+    }
+  }
+
+  .hero__buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .hero__buttons {
+      justify-content: center;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn--primary {
+    background: #3A8B7A;
+    color: #fff;
+  }
+
+  .btn--primary:hover {
+    background: #2d6f5f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(58, 139, 122, 0.3);
+  }
+
+  .btn--secondary {
+    background: #FF6B4A;
+    color: #fff;
+  }
+
+  .btn--secondary:hover {
+    background: #e55536;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 74, 0.3);
+  }
+
+  .hero__image {
+    position: relative;
+  }
+
+  .hero__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 968px) {
+    .hero__image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
 </style>
 
 {% schema %}
@@ -84,32 +169,49 @@
   "name": "Hero Section",
   "settings": [
     {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#FFD4C8"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Welcome to Our Store"
+      "default": "Herbruikbare lichaamsverzorging die werkt."
     },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Discover amazing products"
+      "default": "Frisheid die blijft. Navullingen die verdwijnen."
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Hero Image"
+      "label": "Hero image"
     },
     {
       "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Shop Now"
+      "id": "primary_button_text",
+      "label": "Primary button text",
+      "default": "Shop Deodorant"
     },
     {
       "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
+      "id": "primary_button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary button text",
+      "default": "Shop Lichaamszeep"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary button link"
     }
   ],
   "presets": [
