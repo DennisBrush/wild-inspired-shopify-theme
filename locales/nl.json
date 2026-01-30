@@ -1,0 +1,9 @@
+{
+  "general": {
+    "404": {
+      "title": "Pagina niet gevonden",
+      "subtext": "De pagina die je zocht bestaat niet.",
+      "link": "Terug naar Home"
+    }
+  }
+}
