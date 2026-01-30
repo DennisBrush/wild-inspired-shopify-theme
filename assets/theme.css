@@ -1,3 +1,28 @@
+/* GT Maru Font */
+@font-face {
+  font-family: 'GT Maru';
+  src: url('https://cdn.shopify.com/s/files/1/0505/4307/files/GT-Maru-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Maru';
+  src: url('https://cdn.shopify.com/s/files/1/0505/4307/files/GT-Maru-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Maru';
+  src: url('https://cdn.shopify.com/s/files/1/0505/4307/files/GT-Maru-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Global Styles */
 * {
   margin: 0;
@@ -6,7 +31,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'GT Maru', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
   color: #333;
 }
