@@ -18,11 +18,11 @@
         {% endif %}
       </div>
     </div>
-
+    
     {% if section.settings.image != blank %}
       <div class="hero__image">
-        <img 
-          src="{{ section.settings.image | img_url: '800x' }}" 
+        <img
+          src="{{ section.settings.image | img_url: '800x' }}"
           alt="{{ section.settings.heading }}"
           loading="lazy"
         >
@@ -39,7 +39,7 @@
     align-items: center;
     overflow: hidden;
   }
-
+  
   .hero__container {
     max-width: 1400px;
     margin: 0 auto;
@@ -49,7 +49,7 @@
     align-items: center;
     width: 100%;
   }
-
+  
   @media (max-width: 968px) {
     .hero__container {
       grid-template-columns: 1fr;
@@ -62,11 +62,11 @@
       min-height: auto;
     }
   }
-
+  
   .hero__content {
     max-width: 600px;
   }
-
+  
   .hero__heading {
     font-size: 72px;
     font-weight: 700;
@@ -75,13 +75,13 @@
     margin: 0 0 20px 0;
     text-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
-
+  
   @media (max-width: 768px) {
     .hero__heading {
       font-size: 48px;
     }
   }
-
+  
   .hero__subheading {
     font-size: 20px;
     color: #fff;
@@ -89,65 +89,63 @@
     line-height: 1.5;
     opacity: 0.95;
   }
-
+  
   @media (max-width: 768px) {
     .hero__subheading {
       font-size: 18px;
     }
   }
-
+  
   .hero__buttons {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
   }
-
+  
   @media (max-width: 768px) {
     .hero__buttons {
       justify-content: center;
     }
   }
-
+  
   .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     padding: 16px 40px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 30px;
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
   }
-
+  
   .btn--primary {
-    background: #3A8B7A;
+    background: #165B36;
     color: #fff;
   }
-
+  
   .btn--primary:hover {
-    background: #2d6f5f;
+    background: #124628;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(58, 139, 122, 0.3);
+    box-shadow: 0 8px 20px rgba(22, 91, 54, 0.3);
   }
-
+  
   .btn--secondary {
-    background: #FF6B4A;
-    color: #fff;
+    background: #ff94da;
+    color: #165B36;
   }
-
+  
   .btn--secondary:hover {
-    background: #e55536;
+    background: #ff7ad0;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 107, 74, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 148, 218, 0.3);
   }
-
+  
   .hero__image {
     position: relative;
   }
-
+  
   .hero__image img {
     width: 100%;
     height: auto;
@@ -155,7 +153,7 @@
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   }
-
+  
   @media (max-width: 968px) {
     .hero__image {
       max-width: 500px;
@@ -166,14 +164,8 @@
 
 {% schema %}
 {
-  "name": "Hero Section",
+  "name": "Hero",
   "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background color",
-      "default": "#FFD4C8"
-    },
     {
       "type": "text",
       "id": "heading",
@@ -206,17 +198,23 @@
       "type": "text",
       "id": "secondary_button_text",
       "label": "Secondary button text",
-      "default": "Shop Lichaamszeep"
+      "default": "Ontdek meer"
     },
     {
       "type": "url",
       "id": "secondary_button_link",
       "label": "Secondary button link"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#e9ff07"
     }
   ],
   "presets": [
     {
-      "name": "Hero Section"
+      "name": "Hero section"
     }
   ]
 }
