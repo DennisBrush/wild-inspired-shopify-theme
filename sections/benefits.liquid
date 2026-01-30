@@ -1,135 +1,115 @@
-<div class="benefits-section">
+<section class="benefits-section">
   <div class="container">
-    <h2>{{ section.settings.heading }}</h2>
+    <h2 class="section-title">The last deodorant you'll ever need to buy. (And body wash. And lip balm. And hand wash...)</h2>
+    
     <div class="benefits-grid">
-      {% for block in section.blocks %}
-        <div class="benefit-item" {{ block.shopify_attributes }}>
-          {% if block.settings.icon != blank %}
-            <div class="benefit-icon">
-              <img src="{{ block.settings.icon | img_url: '100x' }}" alt="{{ block.settings.title }}">
-            </div>
-          {% endif %}
-          <h3>{{ block.settings.title }}</h3>
-          <p>{{ block.settings.description }}</p>
-        </div>
-      {% endfor %}
+      <!-- Effective -->
+      <div class="benefit-item">
+        <div class="benefit-icon">👃</div>
+        <h3>Effective.</h3>
+        <p>Rigorously tried, tested and customer approved.</p>
+      </div>
+      
+      <!-- No waste -->
+      <div class="benefit-item">
+        <div class="benefit-icon">❌</div>
+        <h3>No waste.</h3>
+        <p>Unique plastic-free, compostable refills.</p>
+      </div>
+      
+      <!-- Plant powered -->
+      <div class="benefit-item">
+        <div class="benefit-icon">🌱</div>
+        <h3>Plant powered.</h3>
+        <p>Premium, natural ingredients - Paraben & Phthalate free</p>
+      </div>
+      
+      <!-- Super simple -->
+      <div class="benefit-item">
+        <div class="benefit-icon">📦</div>
+        <h3>Super simple.</h3>
+        <p>To your door, or find us in store.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-.benefits-section {
-  padding: 80px 20px;
-  background-color: white;
-}
-
-.benefits-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.benefits-section h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #2D5F3F;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
-.benefit-item {
-  text-align: center;
-}
-
-.benefit-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f7f4;
-  border-radius: 50%;
-  padding: 20px;
-}
-
-.benefit-icon img {
-  max-width: 100%;
-  height: auto;
-}
-
-.benefit-item h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #2D5F3F;
-}
-
-.benefit-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
+  .benefits-section {
+    padding: 80px 0;
+    background-color: white;
   }
-}
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    line-height: 1.2;
+    color: var(--color-charcoal);
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .benefit-item {
+    text-align: center;
+  }
+  
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .benefit-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--color-charcoal);
+  }
+  
+  .benefit-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+    
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+    }
+    
+    .benefit-item h3 {
+      font-size: 1.2rem;
+    }
+  }
 </style>
 
 {% schema %}
 {
   "name": "Benefits Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Why Choose Us"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "benefit",
-      "name": "Benefit",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Icon"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Benefit Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Benefit description goes here"
-        }
-      ]
-    }
-  ],
+  "settings": [],
   "presets": [
     {
-      "name": "Benefits Section",
-      "blocks": [
-        {
-          "type": "benefit"
-        },
-        {
-          "type": "benefit"
-        },
-        {
-          "type": "benefit"
-        }
-      ]
+      "name": "Benefits Section"
     }
   ]
 }
