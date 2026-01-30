@@ -1,220 +1,55 @@
-<div class="hero-section" style="background: {{ section.settings.bg_color }};">
-  <div class="hero__container">
-    <div class="hero__content">
-      <h1 class="hero__heading">{{ section.settings.heading }}</h1>
-      <p class="hero__subheading">{{ section.settings.subheading }}</p>
-      
-      <div class="hero__buttons">
-        {% if section.settings.primary_button_text != blank %}
-          <a href="{{ section.settings.primary_button_link }}" class="btn btn--primary">
-            {{ section.settings.primary_button_text }}
-          </a>
-        {% endif %}
-        
-        {% if section.settings.secondary_button_text != blank %}
-          <a href="{{ section.settings.secondary_button_link }}" class="btn btn--secondary">
-            {{ section.settings.secondary_button_text }}
-          </a>
-        {% endif %}
-      </div>
-    </div>
-    
-    {% if section.settings.image != blank %}
-      <div class="hero__image">
-        <img
-          src="{{ section.settings.image | img_url: '800x' }}"
-          alt="{{ section.settings.heading }}"
-          loading="lazy"
-        >
-      </div>
-    {% endif %}
+<div class="hero">
+  <div class="hero-content">
+    <p class="hero-label">ORAL BEAUTY</p>
+    <h1>
+      Your ritual,<br>
+      <span class="accent">your mood.</span>
+    </h1>
+    <p>Three flavours. Three feelings. Choose how you want to start and end your day.</p>
+    <a href="#collection" class="btn btn-primary">EXPLORE FLAVOURS</a>
   </div>
 </div>
 
 <style>
-  .hero-section {
-    padding: 80px 24px;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .hero__container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    width: 100%;
-  }
-  
-  @media (max-width: 968px) {
-    .hero__container {
-      grid-template-columns: 1fr;
-      gap: 40px;
-      text-align: center;
-    }
-    
-    .hero-section {
-      padding: 60px 20px;
-      min-height: auto;
-    }
-  }
-  
-  .hero__content {
-    max-width: 600px;
-  }
-  
-  .hero__heading {
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #000;
-    margin: 0 0 20px 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  
-  @media (max-width: 768px) {
-    .hero__heading {
-      font-size: 48px;
-    }
-  }
-  
-  .hero__subheading {
-    font-size: 20px;
-    color: #000;
-    margin: 0 0 32px 0;
-    line-height: 1.5;
-    opacity: 0.95;
-  }
-  
-  @media (max-width: 768px) {
-    .hero__subheading {
-      font-size: 18px;
-    }
-  }
-  
-  .hero__buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  
-  @media (max-width: 768px) {
-    .hero__buttons {
-      justify-content: center;
-    }
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 16px 40px;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .btn--primary {
-    background: #165B36;
-    color: #000;
-  }
-  
-  .btn--primary:hover {
-    background: #124628;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(22, 91, 54, 0.3);
-  }
-  
-  .btn--secondary {
-    background: #ff94da;
-    color: #165B36;
-  }
-  
-  .btn--secondary:hover {
-    background: #ff7ad0;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 148, 218, 0.3);
-  }
-  
-  .hero__image {
-    position: relative;
-  }
-  
-  .hero__image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  }
-  
-  @media (max-width: 968px) {
-    .hero__image {
-      max-width: 500px;
-      margin: 0 auto;
-    }
+  .hero {
+    background: linear-gradient(135deg, rgba(245, 241, 237, 0.95), rgba(245, 241, 237, 0.9)),
+                url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1600') center/cover;
+    min-height: 80vh;
   }
 </style>
 
 {% schema %}
 {
-  "name": "Hero",
+  "name": "Hero Section",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Herbruikbare lichaamsverzorging die werkt."
+      "default": "Your ritual, your mood."
     },
     {
-      "type": "textarea",
+      "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Frisheid die blijft. Navullingen die verdwijnen."
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Hero image"
+      "default": "Three flavours. Three feelings. Choose how you want to start and end your day."
     },
     {
       "type": "text",
-      "id": "primary_button_text",
-      "label": "Primary button text",
-      "default": "Shop Deodorant"
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "EXPLORE FLAVOURS"
     },
     {
       "type": "url",
-      "id": "primary_button_link",
-      "label": "Primary button link"
-    },
-    {
-      "type": "text",
-      "id": "secondary_button_text",
-      "label": "Secondary button text",
-      "default": "Ontdek meer"
-    },
-    {
-      "type": "url",
-      "id": "secondary_button_link",
-      "label": "Secondary button link"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background color",
-      "default": "#e9ff07"
+      "id": "button_link",
+      "label": "Button Link"
     }
   ],
   "presets": [
     {
-      "name": "Hero section"
+      "name": "Hero",
+      "category": "Custom"
     }
   ]
 }
