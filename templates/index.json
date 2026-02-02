@@ -12,33 +12,26 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_color": "#ffffff",
-        "heading": "De laatste tandenborstel die je ooit hoeft te kopen",
-        "subheading": "Sustainable, effective products for your daily routine",
-        "primary_button_text": "Shop Deodorant",
-        "primary_button_link": "",
-        "secondary_button_text": "Shop Lichaamszeep",
-        "secondary_button_link": ""
+        "hero_image": "shopify://shop_images/Boombrushtravelcasezoomed01_99de972a-8392-47d3-b5a0-8c2083869fea.png"
       }
     },
     "featured_products": {
       "type": "featured-products",
       "settings": {
-        "heading": "Shop favourites"
+        "product1_image": "shopify://shop_images/Boombrushtravelcase02_c5711aff-fd86-4778-9a4e-89b5e48f3d98.jpg",
+        "product2_image": "shopify://shop_images/PRDTFT_Wave_32138.jpg",
+        "product3_image": "shopify://shop_images/2023.12.04_BOOMBrush_Studio_Packshots_00561563_1c678a51-02ea-40bc-a1c3-8997c7cf00c1.jpg",
+        "product4_image": "shopify://shop_images/Bundel_Family.jpg",
+        "product5_image": "shopify://shop_images/PRDTFT_Boost_32111.jpg"
       }
     },
     "benefits": {
       "type": "benefits",
-      "settings": {
-        "heading": "The last deodorant you'll ever need to buy."
-      }
+      "settings": {}
     },
     "how_it_works": {
       "type": "how-it-works",
-      "settings": {
-        "heading": "How it works...",
-        "subtitle": "Simple steps to get started"
-      }
+      "settings": {}
     },
     "newsletter": {
       "type": "newsletter",
