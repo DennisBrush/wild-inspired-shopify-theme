@@ -12,7 +12,7 @@
     "hero": {
       "type": "hero",
       "custom_css": [
-        ".hero {background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%) !important;}",
+        ".hero {background: linear-gradient(135deg, #ffc0cb 0%, #ffb3d9 50%, #ffa6d6 100%) !important;}",
         "h2 {font-size: 32px;}"
       ],
       "settings": {
