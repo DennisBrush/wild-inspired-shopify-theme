@@ -1,0 +1,126 @@
+<div class="product-context">
+  <div class="container">
+    <div class="context-grid">
+      <div class="context-content">
+        <span class="context-label">{{ section.settings.label }}</span>
+        <h2 class="context-heading">{{ section.settings.heading }}</h2>
+        <div class="context-text">
+          {{ section.settings.description }}
+        </div>
+        <div class="context-text-secondary">
+          {{ section.settings.secondary_text }}
+        </div>
+      </div>
+      <div class="context-image">
+        {% if section.settings.image %}
+          <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.heading }}">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.product-context {
+  padding: 120px 0;
+  background: #FAF8F6;
+}
+
+.product-context .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.context-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.context-heading {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 0 0 32px 0;
+  color: #1A1A1A;
+}
+
+.context-text,
+.context-text-secondary {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.context-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .product-context {
+    padding: 60px 0;
+  }
+  
+  .context-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .context-heading {
+    font-size: 32px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Product Context",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "IN CONTEXT"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Designed for your space."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "BOOM. isn't just a toothbrush — it's a design object. Minimal, beautiful, and made to belong on your counter, not hidden in a drawer."
+    },
+    {
+      "type": "textarea",
+      "id": "secondary_text",
+      "label": "Secondary Text",
+      "default": "The soft-touch matte finish resists fingerprints and feels warm in your hand. The weighted base keeps it stable. Every detail is considered."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Context Image"
+    }
+  ]
+}
+{% endschema %}
