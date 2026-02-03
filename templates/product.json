@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "settings": {
+        "show_quantity_selector": true
+      }
+    }
+  },
+  "order": ["main"]
+}
