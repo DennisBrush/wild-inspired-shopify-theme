@@ -12,8 +12,7 @@
     "hero": {
       "type": "hero",
       "custom_css": [
-        ".hero {background: linear-gradient(135deg, #ffc0cb 0%, #ffb3d9 50%, #ffa6d6 100%) !important;}",
-        "h2 {font-size: 32px;}"
+        ".hero {background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 50%, #f0e0d0 100%);}"
       ],
       "settings": {
         "hero_image": "shopify://shop_images/Boombrushtravelcasezoomed01_99de972a-8392-47d3-b5a0-8c2083869fea.png"
