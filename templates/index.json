@@ -15,7 +15,7 @@
         ".hero {background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 50%, #f0e0d0 100%);}"
       ],
       "settings": {
-        "hero_image": "shopify://shop_images/Boombrushtravelcasezoomed01_99de972a-8392-47d3-b5a0-8c2083869fea.png"
+        "hero_image": "shopify://shop_images/Gemini_Generated_Image_rnj91mrnj91mrnj9.png"
       }
     },
     "featured_products": {
@@ -44,10 +44,61 @@
         "placeholder": "Enter your email",
         "button_text": "Subscribe"
       }
+    },
+    "177023508913708e39": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b84a9a6_dypQah": {
+          "type": "ai_gen_block_b84a9a6",
+          "settings": {
+            "background_image": "shopify://shop_images/Gemini_Generated_Image_rnj91mrnj91mrnj9.png",
+            "background_size": "cover",
+            "background_position": "center",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.5,
+            "section_height": 900,
+            "section_height_mobile": 400,
+            "heading": "Your daily ritual",
+            "subheading": "Discover our amazing products",
+            "button_text": "Shop now",
+            "button_link": "",
+            "content_alignment": "center",
+            "content_vertical_alignment": "center",
+            "text_alignment": "center",
+            "content_max_width": 800,
+            "content_padding": 40,
+            "content_padding_mobile": 20,
+            "heading_font": "assistant_n7",
+            "heading_size": 56,
+            "heading_size_mobile": 32,
+            "heading_color": "#ffffff",
+            "heading_spacing": 20,
+            "subheading_size": 20,
+            "subheading_size_mobile": 16,
+            "subheading_color": "#ffffff",
+            "subheading_spacing": 30,
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button_hover_background_color": "#000000",
+            "button_hover_text_color": "#ffffff",
+            "button_font_size": 16,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b84a9a6_dypQah"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero",
+    "177023508913708e39",
     "featured_products",
     "benefits",
     "how_it_works",
