@@ -1,107 +1,136 @@
 <div class="hero">
   <div class="hero-content">
+    <p class="hero-label">ORAL BEAUTY</p>
     <h1>
-      Refillable<br>
-      body care<br>
-      that works.
+      Your daily ritual,<br>
+      <span class="hero-accent">elevated.</span>
     </h1>
-    <p class="hero-subtitle">Freshness that lasts. Refills that disappear.</p>
+    <p class="hero-subtitle">Transform brushing into a moment of calm confidence. Designed for those who see beauty in every detail.</p>
     <div class="hero-buttons">
-      <a href="/products/roll-on-antiperspirant" class="btn btn-primary">SHOP ROLL ON ANTIPERSPIRANT</a>
-      <a href="/products/deodorant" class="btn btn-secondary">SHOP STICK DEODORANT</a>
+      <a href="/products" class="btn btn-primary">DISCOVER BOOM.</a>
+      <a href="/pages/ritual" class="btn btn-secondary">THE RITUAL</a>
     </div>
   </div>
   <div class="hero-image">
-    <img src="{{ section.settings.hero_image | img_url: '1200x' }}" alt="Wild Products">
+    <img src="{{ section.settings.hero_image | img_url: '1200x' }}" alt="BOOM. Toothbrush">
   </div>
 </div>
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #ffc0cb 0%, #ffb3d9 50%, #ffa6d6 100%);
-    min-height: 600px;
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 50%, #f0e0d0 100%);
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 5%;
+    padding: 80px 8%;
     position: relative;
   }
   
   .hero-content {
     flex: 1;
     max-width: 600px;
-    color: white;
+    color: #2d2d2d;
+  }
+  
+  .hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b7355;
+    margin-bottom: 20px;
+    font-weight: 500;
   }
   
   .hero h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 400;
     line-height: 1.1;
-    margin: 0 0 20px 0;
-    color: white;
+    margin: 0 0 30px 0;
+    color: #2d2d2d;
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  .hero-accent {
+    color: #d97757;
+    font-weight: 400;
   }
   
   .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #6b6b6b;
+    max-width: 500px;
   }
   
   .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
   }
   
   .hero .btn {
-    padding: 15px 30px;
-    border-radius: 5px;
+    padding: 18px 35px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
   }
   
   .hero .btn-primary {
-    background-color: var(--color-deep-teal);
+    background-color: #2d2d2d;
     color: white;
   }
   
   .hero .btn-primary:hover {
-    background-color: #145040;
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
   }
   
   .hero .btn-secondary {
-    background-color: #ff6b6b;
-    color: white;
+    background-color: transparent;
+    color: #2d2d2d;
+    border: 2px solid #2d2d2d;
   }
   
   .hero .btn-secondary:hover {
-    background-color: #ff5252;
+    background-color: #2d2d2d;
+    color: white;
   }
   
   .hero-image {
     flex: 1;
-    max-width: 600px;
+    max-width: 650px;
     text-align: right;
+    position: relative;
   }
   
   .hero-image img {
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
   }
   
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
       text-align: center;
-      padding: 40px 5%;
+      padding: 60px 5%;
+      min-height: auto;
+    }
+    
+    .hero-content {
+      max-width: 100%;
     }
     
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     
     .hero-buttons {
@@ -111,6 +140,7 @@
     .hero-image {
       margin-top: 40px;
       text-align: center;
+      max-width: 100%;
     }
   }
 </style>
